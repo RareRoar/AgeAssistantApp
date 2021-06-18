@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SearchApp.Views.SearchView">
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Grid Margin="20,35,20,20" HeightRequest="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Entry x:Name="searchEntry" Placeholder="search for ..."
+                   Grid.Column="0" Grid.Row="0"/>
+                <Button x:Name="searchButton" Text="search!" Clicked="SearchButtonHandlerAsync"
+                    Grid.Column="1" Grid.Row="0"/>
+            </Grid>
+            <ListView x:Name="scrollLayout"
+              HasUnevenRows="True"
+              ItemsSource="{Binding Items}"
+                       Margin="20,35,20,20"
+                      ItemSelected="scrollLayoutItemSelectedAsync">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="#80deea" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                    <Label Text="{Binding Text}" FontSize="Medium" TextColor="Navy"/>
+                                    <Label Text="{Binding Description}" FontSize="Small"/>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

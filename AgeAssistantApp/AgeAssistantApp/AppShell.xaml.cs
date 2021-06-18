@@ -1,18 +1,19 @@
-﻿using AgeAssistantApp.ViewModels;
-using AgeAssistantApp.Views;
-using System;
-using System.Collections.Generic;
+﻿using SearchApp.Views;
 using Xamarin.Forms;
 
-namespace AgeAssistantApp
+namespace SearchApp
 {
     public partial class AppShell : Xamarin.Forms.Shell
     {
         public AppShell()
         {
             InitializeComponent();
-            Routing.RegisterRoute(nameof(ItemDetailPage), typeof(ItemDetailPage));
-            Routing.RegisterRoute(nameof(NewItemPage), typeof(NewItemPage));
+
+            // routes registering
+            // регистрация путей
+            Routing.RegisterRoute(nameof(LoginView), typeof(LoginView));
+            Routing.RegisterRoute(nameof(SignUpView), typeof(SignUpView));
+            Routing.RegisterRoute(nameof(SearchView), typeof(SearchView));
         }
 
     }

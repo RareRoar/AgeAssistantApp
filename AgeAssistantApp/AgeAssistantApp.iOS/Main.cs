@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace AgeAssistantApp.iOS
+namespace SearchApp.iOS
 {
     public class Application
     {

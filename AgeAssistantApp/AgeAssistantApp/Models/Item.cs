@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace AgeAssistantApp.Models
+﻿namespace SearchApp.Models
 {
     public class Item
     {

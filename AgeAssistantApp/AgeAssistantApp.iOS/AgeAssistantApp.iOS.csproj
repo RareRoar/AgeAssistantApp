@@ -157,4 +157,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\test_1564737302.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cat.jpeg" />
+  </ItemGroup>
 </Project>

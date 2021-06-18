@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SearchApp.Views.SignUpView">
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" Padding="15">
+            <Entry x:Name="usernameEntry" Placeholder="Username" Text="{Binding Path=Username}"></Entry>
+            <Entry x:Name="passwordEntry" Placeholder="Password" IsPassword="True" Text="{Binding Path=Password}"></Entry>
+            <Entry x:Name="confirmEntry" Placeholder="Confirm Password" IsPassword="True"></Entry>
+            <Button
+                FontFamily="Roboto" FontSize="Medium"
+                        HorizontalOptions="Center" BackgroundColor="DeepSkyBlue"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                x:Name="signUpButton" Text="Sign Up" Clicked="SignUpButtonHandler"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

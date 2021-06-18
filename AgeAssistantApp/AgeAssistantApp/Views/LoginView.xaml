@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             <!-- xmlns:helpers="clr-namespace:DemoApp.Helpers" -->
-             x:Class="AgeAssistantApp.Views.LoginView">
+                     
+             x:Class="SearchApp.Views.LoginView">
     <ContentPage.Content>
         <Grid Padding="20" VerticalOptions="Center">
             <Grid.RowDefinitions>
@@ -11,24 +11,27 @@
             </Grid.RowDefinitions>
 
             <StackLayout Grid.Row="0" VerticalOptions="Center">
-                <Image Source="https://i.imgur.com/t7XVxpT.jpg"
+                <Image Source="cat.jpeg"
                        WidthRequest="100" HeightRequest="300" />
 
-                <Label Text="Login Form to Age Assistant App" FontFamily="Roboto"
+                <Label Text="Please log into application" FontFamily="Roboto"
                        TextColor="Black" FontSize="30" HorizontalOptions="Center" />
             </StackLayout>
 
             <StackLayout Grid.Row="1" Spacing="10">
-                <Entry Placeholder="Enter Username" Text="{Binding Username}" />
-                <Entry Placeholder="Enter Password" Text="{Binding Password}" IsPassword="True"/>
+                <Entry Placeholder="Enter Username" Text="{Binding Path=Username}" />
+                <Entry Placeholder="Enter Password" Text="{Binding Path=Password}" IsPassword="True"/>
 
-                <Button Text="Login" HorizontalOptions="Center" BackgroundColor="#4C82E6"
-                        TextColor="Black" WidthRequest="200" HeightRequest="60" CornerRadius="20"/>
+                <Button FontFamily="Roboto" Text="Login" FontSize="Medium" HorizontalOptions="Center" BackgroundColor="#4C82E6"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                        Clicked="ButtonLoginHandler"/>
 
-                <Label Text="New Users: " />
+                <Label FontFamily="Roboto" Text="New Users: " FontSize="Small" />
 
-                <Button Text="Register" HorizontalOptions="Center" BackgroundColor="DeepSkyBlue"
-                        TextColor="Black" WidthRequest="200" HeightRequest="60" CornerRadius="20"/>
+                <Button FontFamily="Roboto" x:Name="buttonRegister" FontSize="Medium"
+                        Text="Register" HorizontalOptions="Center" BackgroundColor="DeepSkyBlue"
+                        TextColor="White" WidthRequest="200" HeightRequest="60" CornerRadius="20"
+                        Clicked="ButtonRegisterHandler"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
